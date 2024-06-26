@@ -10,3 +10,16 @@ puts "----------"
 # Update the first store (@store1) instance in the database. (Change its name or something.)
 
 # Your code goes here ...
+
+@store1 = Store.find(1)
+@store2 = Store.find(2)
+@store3 = Store.find(3)
+
+Store.update( 1, name: "Victoria")
+
+# Reload @store1 to reflect the updated data
+@store1.reload
+
+puts @store1
+puts @store2
+puts @store3
