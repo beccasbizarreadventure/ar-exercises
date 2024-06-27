@@ -13,7 +13,6 @@ puts "----------"
 
 @store1 = Store.find(1)
 @store2 = Store.find(2)
-@store3 = Store.find(3)
 
 Store.update( 1, name: "Victoria")
 
@@ -22,4 +21,3 @@ Store.update( 1, name: "Victoria")
 
 puts @store1
 puts @store2
-puts @store3

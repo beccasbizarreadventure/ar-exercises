@@ -11,3 +11,8 @@ puts "----------"
 # Verify that the store has been deleted by again outputting (putsing) the count (as you did in Exercise 1.)
 
 # Your code goes here ...
+
+@store3 = Store.find(3)
+Store.destroy(3)
+
+puts Store.count
