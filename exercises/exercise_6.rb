@@ -19,3 +19,31 @@ puts "----------"
 # Go ahead and create some more employees using the create method. You can do this by making multiple calls to create (like you have before.) No need to assign the employees to variables though. Create them through the @store# instance variables that you defined in previous exercises. Create a bunch under @store1 (Burnaby) and @store2 (Richmond). Eg: @store1.employees.create(...).
 
 # Your code goes here ...
+
+@store1.employees.create([
+  {first_name: "Khurram", last_name: "Virani", hourly_rate: 60},
+  {first_name: "Becca", last_name: "Smith", hourly_rate: 60},
+  {first_name: "Becky", last_name: "Powers", hourly_rate: 100}
+])
+
+@store2.employees.create([
+  {first_name: "Bunny", last_name: "Laurel", hourly_rate: 50},
+  {first_name: "Laurel", last_name: "Bunny", hourly_rate: 50},
+  {first_name: "Levi", last_name: "Bunny", hourly_rate: 80}
+])
+
+# Check for validation errors for @store1 employees
+@store1.employees.each do |employee|
+  unless employee.valid?
+    puts "Errors for employee #{employee.id}:"
+    puts employee.errors.full_messages
+  end
+end
+
+# Check for validation errors for @store2 employees
+@store2.employees.each do |employee|
+  unless employee.valid?
+    puts "Errors for employee #{employee.id}:"
+    puts employee.errors.full_messages
+  end
+end

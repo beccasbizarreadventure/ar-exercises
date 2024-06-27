@@ -23,3 +23,11 @@ puts "----------"
 # Display the error messages provided back from ActiveRecord to the user (one on each line) after you attempt to save/create the record
 
 # Your code goes here ...
+
+new_store = Store.create(name: "We")
+
+if new_store.errors.any?
+  new_store.errors.full_messages.each do |message|
+    puts message
+  end
+end

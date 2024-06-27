@@ -13,3 +13,9 @@ puts "----------"
 # Output the number of stores that are generating $1M or more in annual sales. Hint: Chain together where and size (or count) Active Record methods.
 
 # Your code goes here ...
+
+total_revenue = Store.sum(:annual_revenue)
+big_earners = Store.where('annual_revenue > ?', 1000000).count # proper syntax for finds the number of stores where annual_revenue is greater than 1000000
+
+puts "Total company revenue: $#{total_revenue}"
+puts "There are #{big_earners} high earning stores"
